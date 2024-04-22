@@ -1,3 +1,4 @@
+$( document ).ready(function() {
 new DataTable('#example', {
     scrollX: true,
     pageLength:50,
@@ -40,3 +41,19 @@ new DataTable('#example', {
         dropdown.querySelector('.fa-chevron-up').style.display = 'none';
       });
     });
+
+var odd_check = 0;
+$("tbody tr" ).each(function(index) 
+{
+     if(index==odd_check)
+     {
+         jQuery(this).find('input[type="checkbox"]').addClass('odd_check')
+         odd_check = parseInt(odd_check) + 3
+     }
+    else
+     {
+       jQuery(this).find('input[type="checkbox"]').addClass('even_check')  
+     }
+});
+
+});
